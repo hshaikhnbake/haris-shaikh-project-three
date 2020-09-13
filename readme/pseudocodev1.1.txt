@@ -1,0 +1,11 @@
+Pseudocode
+
+// Create an Event Listener so that when a card is clicked it shows a card -- (i.e. displayCard Function on click)
+
+// Have displayCard function outline whether a card is hidden, shown, and disabled(after user chooses correct choice)
+
+// Run if/else statement to determine if cards match or don't match
+
+// Create a counter for the amount of attempts a user takes 
+
+// Have cards shuffle on load/restart (stretch goal)

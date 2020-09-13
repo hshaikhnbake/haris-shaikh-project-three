@@ -1,0 +1,28 @@
+*** Description of Project ***
+
+A card matching game. The theme will be inspired from a mini game in Super Mario 3 with a bit of Juno twist!
+
+MVP Goals
+1. The game should know how to identify matched/unmatched cards
+2. The cards should shuffle on when the page loads or refreshes
+3. The game should display amount of attempts taken by the user and a streak count 
+
+Stretch Goals
+
+1. Add Music That Chimes whether answer is correct or incorrect
+2. Add a Restart Button 
+3. Add A Timer to Increase Challenge or Levels
+4. Add a Winner 
+
+Pseudocode
+
+// Create an Event Listener so that when a card is clicked it shows a card -- (i.e. displayCard Function on click)
+
+// Have displayCard function outline whether a card is hidden, shown, and disabled(after user chooses correct choice)
+
+// Have cards shuffle on load/restart
+
+// Run if/else statement to determine if cards match or don't match
+
+// Create a counter for the amount of attempts a user takes
+
