@@ -13,6 +13,8 @@
 $primaryFont: "Press Start 2P";
 $secondaryFont: "Miriam Libre";
 
+//global
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -50,6 +52,8 @@ h3 {
     padding: 10px;
 }
 
+//header styles
+
 header {
     display: flex;
     flex-direction: column;
@@ -85,7 +89,7 @@ header {
     }
 }
 
-
+//game styles
 section.game {
     height: 100vh;
     text-align: center;
@@ -149,6 +153,8 @@ section.game {
         }  
     }
 }
+
+//mobile and tablet styles
 
 @media (max-width: 768px) {
     h1 {

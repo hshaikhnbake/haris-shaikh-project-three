@@ -1,6 +1,8 @@
-<!-- Create Favicon! -->
+
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Assets Loaded -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +15,7 @@
     <audio id="mainAudio" loop="loop" src="assets/audio/main1.mp3"></audio>
 </head>
 <body>
+    <!-- Header -->
     <header class="intro">
         <div class="wrapper">
             <h1>Memory Card Match Game!</h1>
@@ -24,11 +27,13 @@
             <button class="startGame">Start Game</button>
         </div>
     </header>
+    <!-- Game -->
     <section class="game">
         <div class="wrapper">
             <h2>Find The Correct Match!</h2>
             <h3 class="matchResultMessage"></h3>
 
+            <!-- Card Container -->
             <div class="memoryCardContainer"> 
                 <div data-type="talia" class="memoryCard">
                     <div class="cardFront">
@@ -179,7 +184,6 @@
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script src="scripts.js"></script>
 </body>
 </html>
