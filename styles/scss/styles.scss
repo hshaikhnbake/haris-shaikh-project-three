@@ -6,14 +6,16 @@
 
 //Typography
 $primaryFont: "Press Start 2P";
+$secondaryFont: "Miriam Libre";
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: $primaryFont;
-    color: black;
+    color: white;
     background-color: #1A1A1A;
 }
 
@@ -21,27 +23,74 @@ body {
     max-width: 1280px;
     width: 90%; 
     margin: 0 auto;
-    border: 1px solid white;
+}
+
+h1 {
+    font-family: $primaryFont;
+    font-size: 5vw;
+    line-height: 5vw;
+    margin: 10px 0
+}
+
+h2 {
+    font-family: $secondaryFont;
+    font-size: 3vw;
+    padding: 10px 0;
+}
+
+h3 {
+    text-align: center;
+    color: #ea593e;
+    font-size: 3rem;
 }
 
 header {
-    h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background-color: lightseagreen; 
+    button {
+        display: inline-block;
+        border: 1px solid white;
+        background: none;
+        padding: 1rem 2rem;
+        margin: 20px 0;
+        text-decoration: none;
+        color: #ffffff;
+        font-family: $primaryFont;
+        font-size: 1.6rem;
+        cursor: pointer;
+        text-align: center;
+            
+            &:hover {
+                color: goldenrod;
+                &:before {
+                content: '» ';
+                image-rendering: pixelated;
+                }
+            }
+        .startGame {
+            background: goldenrod;
+        }
     }
 }
 
+
 section.game {
     height: 100vh;
+        h2 {
+            font-family:$primaryFont;
+        }
         .counterContainer {
-        display: flex;
-        justify-content: space-around;
-        margin: 20px 0;
-        background-color: #1A1A1A;
-            .counter {
-                font-size: 2rem;
-            }
+            font-family: $secondaryFont;
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            background-color: #1A1A1A;
+                .counter {
+                    font-size: 2rem;
+                }
                 
     }
 
@@ -76,18 +125,26 @@ section.game {
                 position: absolute;
                 width: 100%;
                 height: 100%;
+                padding: 30px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border-radius: 3px;
                 backface-visibility: hidden;
+                transform: rotateX(0deg);
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
             }
             .cardBack {
                 background-color: peachpuff;
+
             }
             .cardFront {
-                background-color: green;
-
+                background-color: papayawhip;
+                transform: rotateY(180deg);
+                
             }
             &.flip {
                 transform: rotateY(180deg);

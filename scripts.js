@@ -1,8 +1,7 @@
 const cardApp = {}
 cardApp.card = $('.memoryCard')
 cardApp.cardMatchContainer = [];
-// cardApp.matchAudio = 
-// cardApp.unmatchAudio = 
+
 
 cardApp.cardMatch = function () {
     if (cardApp.cardMatchContainer.length === 2) {
@@ -14,6 +13,31 @@ cardApp.cardMatch = function () {
         }
     }
 }
+
+cardApp.playMainAudio = function () {
+    $('.soundOn').on('click', soundOn);
+
+    function soundOn (){
+        $('#mainAudio')[0].play();
+    }
+}
+
+cardApp.pauseMainAudio = function () {
+    $('.soundOff').on('click', soundOn);
+
+    function soundOn() {
+        $('#mainAudio')[0].pause();
+    }
+}
+
+cardApp.scroll = function () {
+    $(".startGame").click(function () {
+        $('html, body').animate({
+            scrollTop: $(".game").offset().top
+        }, 100);
+    });
+}
+
 
 cardApp.cardClick = function () {
     //Event Listener on any cardApp.card to execute function of flipCard
@@ -27,7 +51,6 @@ cardApp.cardClick = function () {
         //Once the card has been flipped, the card is pushed in a cardMatchContainer
         if (cardApp.card.hasClass('flip')) {
             cardApp.cardMatchContainer.push($(this))
-            console.log(cardApp.cardMatchContainer)
         }
 
 
@@ -45,15 +68,18 @@ cardApp.cardClick = function () {
         }
 
         cardApp.match = function () {
-
             $(cardApp.cardMatchContainer[0]).addClass('match');
             $(cardApp.cardMatchContainer[1]).addClass('match');
+            const data = cardApp.cardMatchContainer[0].data('type')
             cardApp.lockMatched();
+            $('#matchAudio')[0].play();
             cardApp.cardMatchContainer = [];
+            $('.matchResultMessage').text(`You matched: ${data}`);
         }
 
         cardApp.unmatch = function () {
             cardApp.lockBoard();
+            $('#noMatchAudio')[0].play();
             setTimeout(function () {
                 $(cardApp.cardMatchContainer[0]).removeClass('flip');
                 $(cardApp.cardMatchContainer[1]).removeClass('flip');
@@ -66,6 +92,9 @@ cardApp.cardClick = function () {
 
 cardApp.init = function () {
     cardApp.cardClick();
+    cardApp.playMainAudio();
+    cardApp.pauseMainAudio();
+    cardApp.scroll();
 }
 $(document).ready(function () {
     cardApp.init();

@@ -4,18 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Match Game</title>
+    <audio id="noMatchAudio" src="assets/audio/nomatch.mp3"></audio>
+    <audio id="matchAudio" src="assets/audio/match.mp3"></audio>
+    <audio id="mainAudio" loop="loop" src="assets/audio/main1.mp3"></audio>
 </head>
 <body>
-    <header>
+    <header class="intro">
         <div class="wrapper">
-            <h1>Memory Game!</h1>
+            <h1>Memory Card Match Game!</h1>
+            <h2>Featuring a Juno Twist</h2>
+            <div class="buttonContainer">
+                <button class="soundOn">Sound On</button>
+                <button class="soundOff">Start Off</button>
+            </div>
+            <button class="startGame">Start Game</button>
         </div>
     </header>
     <section class="game">
         <div class="wrapper">
+            <h2>Memory Game!</h2>
             <div class="counterContainer">
                 <div class="counter">
                     Time Remaining <span id="timeCounter">100</span>
@@ -29,158 +39,151 @@
                     Attempts <span id="attemptsCounter">0</span>
                 </div>
             </div>
+            <h3 class="matchResultMessage"></h3>
 
             <div class="memoryCardContainer"> 
-                <div data-type="mushroom" class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt=""/>
-                    </div>
+                <div data-type="talia" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt=""/>
+                        <img src="./assets/photos/talia.png" alt="It's Talia!"/>
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!"/>
+                    </div>
+                </div>
+                <div data-type="marley" class="memoryCard">
+                    <div class="cardFront">
+                        <img src="./assets/photos/marley.png" alt="It's Marley"/>
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!"/>
+                    </div>
+                </div>
+                <div data-type="mario" class="memoryCard">
+                    <div class="cardFront">
+                        <img src="./assets/photos/mario.png" alt="It's Mario!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
+                    </div>
+                </div>
+                <div data-type="owen" class="memoryCard">
+                    <div class="cardFront">
+                        <img src="./assets/photos/owen.png" alt="It's Owen!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
                 <div data-type="mushroom" class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />R
-                    </div>
                     <div class="cardFront">
-                        <img src="" alt="" />R
+                        <img src="./assets/photos/mushroom.png" alt="It's a Mushroom!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div data-type="apple" class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="star" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/star.png" alt="It's a Star!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
+                    </div>>
+                </div>
+                <div data-type="esther" class="memoryCard">
+                    <div class="cardFront">
+                        <img src="./assets/photos/esther.png" alt="It's Esther!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div data-type="apple" class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="star" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/star.png" alt="It's a Star" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="esther" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/esther.png" alt="It's Esther!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="owen" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/owen.png" alt="It's Owen" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="mushroom" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/mushroom.png" alt="It's a Mushroom!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="mario" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/mario.png" alt="It's Mario" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="darshana" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/darshana.png" alt="It's Darshana!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="talia" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/talia.png" alt="It's Talia!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="darshana" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/darshana.png" alt="It's Darshana!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="luigi" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/luigi.png" alt="It's Luigi!" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="luigi" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/luigi.png" alt="It's Luigi" />
+                    </div>
+                    <div class="cardBack">
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
+                <div data-type="marley" class="memoryCard">
                     <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/marley.png" alt="It's Marley!" />
                     </div>
-                </div>
-                <div class="memoryCard">
                     <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="cardFront">
-                        <img src="" alt="" />
-                    </div>
-                </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="cardFront">
-                        <img src="" alt="" />
-                    </div>
-                </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="cardFront">
-                        <img src="" alt="" />
-                    </div>
-                </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="cardFront">
-                        <img src="" alt="" />
-                    </div>
-                </div>
-                <div class="memoryCard">
-                    <div class="cardBack">
-                        <img src="" alt="" />
-                    </div>
-                    <div class="cardFront">
-                        <img src="" alt="" />
+                        <img src="./assets/photos/juno.png" alt="Juno Card. Click To Reveal!" />
                     </div>
                 </div>
             </div>
