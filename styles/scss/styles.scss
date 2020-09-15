@@ -175,7 +175,6 @@ section.game {
             display: flex;
             }   
         }
-    }
 
     section.game {
         .memoryCardContainer {
@@ -207,6 +206,12 @@ section.game {
                 .cardBack,
                 .cardFront {
                     padding: 10px;
+                    -webkit-perspective: 0;
+                    -webkit-backface-visibility: hidden;
+                    -webkit-transform: translate3d(0,0,0);
+                    visibility:visible;
+                    backface-visibility: hidden
+                    //backface visibility not working in safari. fix referenced from Stack Overflow: https://stackoverflow.com/questions/42744573/backface-visibility-not-working-in-safari/45145977
                 }
             }
         }

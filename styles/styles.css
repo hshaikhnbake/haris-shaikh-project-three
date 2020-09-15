@@ -416,19 +416,6 @@ section.game .memoryCardContainer .memoryCard.flip {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-transition-duration: 5s;
-            transition-duration: 5s;
-  }
-  header button:active {
-    color: goldenrod;
-  }
-  header button:active:before {
-    content: '» ';
-    -ms-interpolation-mode: nearest-neighbor;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -o-pixelated;
-        image-rendering: pixelated;
   }
   section.game .memoryCardContainer .memoryCard {
     height: 150px;
@@ -452,5 +439,10 @@ section.game .memoryCardContainer .memoryCard.flip {
   section.game .memoryCardContainer .memoryCard .cardBack,
   section.game .memoryCardContainer .memoryCard .cardFront {
     padding: 10px;
+    -webkit-perspective: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    visibility: visible;
+    backface-visibility: hidden;
   }
 }
