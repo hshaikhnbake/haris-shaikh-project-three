@@ -1,5 +1,10 @@
 // credits
+
 // how to create flip box in CSS: https://www.w3schools.com/howto/howto_css_flip_box.asp
+
+// My Cohort Classmates: Nathan and Lucas
+
+// Juno Alumni: Celeste E and Alisa Kitkina
 
 
 @import "setup";
@@ -41,7 +46,8 @@ h2 {
 h3 {
     text-align: center;
     color: #ea593e;
-    font-size: 3rem;
+    font-size: 2vw;
+    padding: 10px;
 }
 
 header {
@@ -49,12 +55,15 @@ header {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    background-color: lightseagreen; 
+    background-color: slategray;
+    .junoColor {
+        color:#ea593e;
+    }
     button {
         display: inline-block;
         border: 1px solid white;
         background: none;
-        padding: 1rem 2rem;
+        padding: 2rem 3rem;
         margin: 20px 0;
         text-decoration: none;
         color: #ffffff;
@@ -79,20 +88,8 @@ header {
 
 section.game {
     height: 100vh;
-        h2 {
-            font-family:$primaryFont;
-        }
-        .counterContainer {
-            font-family: $secondaryFont;
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-            background-color: #1A1A1A;
-                .counter {
-                    font-size: 2rem;
-                }
-                
-    }
+    text-align: center;
+    padding: 80px 0;
 
     .memoryCardContainer {
         display: flex;
@@ -150,5 +147,62 @@ section.game {
                 transform: rotateY(180deg);
             }
         }  
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 8vw;
+        line-height: 8vw;
+    }
+
+    h2 {
+        font-size: 6vw;
+    }
+    
+    h3 {
+        font-size: 4vw;
+    }
+
+    header {
+        button {
+            display: flex;
+            }   
+        }
+    }
+
+    section.game {
+        .memoryCardContainer {
+            .memoryCard {
+                height: 150px;
+                width: 100px;
+                .cardBack,
+                .cardFront {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    header {
+        button {
+            display: block;
+            width: 100%;
+            
+        }
+    }
+    section.game {
+        .memoryCardContainer {
+        .memoryCard {
+            height: 90px;
+            width: 60px;
+                .cardBack,
+                .cardFront {
+                    padding: 10px;
+                }
+            }
+        }
     }
 }

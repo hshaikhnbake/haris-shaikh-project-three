@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" type="image/png" href="./assets/photos/juno.png">
     <title>Match Game</title>
     <audio id="noMatchAudio" src="assets/audio/nomatch.mp3"></audio>
     <audio id="matchAudio" src="assets/audio/match.mp3"></audio>
@@ -15,7 +16,7 @@
     <header class="intro">
         <div class="wrapper">
             <h1>Memory Card Match Game!</h1>
-            <h2>Featuring a Juno Twist</h2>
+            <h2>Featuring a <span class="junoColor">Juno</span> Twist</h2>
             <div class="buttonContainer">
                 <button class="soundOn">Sound On</button>
                 <button class="soundOff">Start Off</button>
@@ -25,20 +26,7 @@
     </header>
     <section class="game">
         <div class="wrapper">
-            <h2>Memory Game!</h2>
-            <div class="counterContainer">
-                <div class="counter">
-                    Time Remaining <span id="timeCounter">100</span>
-                </div>
-
-                <div class="counter">
-                    Turns <span id="turnCounter">0</span>
-                </div>
-
-                <div class="counter">
-                    Attempts <span id="attemptsCounter">0</span>
-                </div>
-            </div>
+            <h2>Find The Correct Match!</h2>
             <h3 class="matchResultMessage"></h3>
 
             <div class="memoryCardContainer"> 
