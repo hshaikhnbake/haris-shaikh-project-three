@@ -401,6 +401,11 @@ section.game .memoryCardContainer .memoryCard.flip {
           transform: rotateY(180deg);
 }
 
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 8vw;
